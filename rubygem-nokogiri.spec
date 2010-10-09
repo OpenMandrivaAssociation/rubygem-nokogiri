@@ -2,7 +2,7 @@
 
 Summary:	A HTML, XML, SAX, and Reader parser written in ruby
 Name:		rubygem-%{oname}
-Version:	1.4.1
+Version:	1.4.3.1
 Release:	%mkrel 1
 License:	MIT
 Group:		Development/Ruby
