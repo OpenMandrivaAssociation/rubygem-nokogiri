@@ -1,41 +1,88 @@
-%define	oname	nokogiri
+# Generated from nokogiri-1.5.0.gem by gem2rpm5 -*- rpm-spec -*-          
+%define	rbname	nokogiri
 
-Summary:	A HTML, XML, SAX, and Reader parser written in ruby
-Name:		rubygem-%{oname}
-Version:	1.4.3.1
-Release:	%mkrel 1
-License:	MIT
+Summary:	Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
+Name:		rubygem-%{rbname}
+
+Version:	1.5.0
+Release:	1
 Group:		Development/Ruby
-URL:		http://%{oname}.rubyforge.org/
-Source0:	http://gems.rubyforge.org/gems/%{oname}-%{version}.gem
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	ruby-RubyGems ruby-devel libxslt-devel
-Requires:	ruby
+License:	GPLv2+ or Ruby
+URL:		http://nokogiri.org
+Source0:	http://gems.rubyforge.org/gems/%{rbname}-%{version}.gem
+BuildRequires:	rubygems 
+BuildRequires:	ruby-devel
+BuildRequires:	rubygem(rake)
+BuildRequires:	libxslt-devel
+BuildRequires:	pkgconfig(libxml-2.0)
 
 %description
-Nokogiri (鋸) is a HTML, XML, SAX, and Reader parser. Among Nokogiri's many
-features is the ability to search documents via XPath or CSS3 selectors.
+Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser.  Among Nokogiri's
+many features is the ability to search documents via XPath or CSS3 selectors.
 XML is like violence - if it doesn’t solve your problems, you are not using
 enough of it.
 
+%package	doc
+Summary:	Documentation for %{name}
+Group:		Books/Computer books
+Requires:	%{name} = %{EVRD}
+BuildArch:	noarch
+
+%description	doc
+Documents, RDoc & RI documentation for %{name}.
+
 %prep
+%setup -q
 
 %build
+%gem_build
 
 %install
-rm -rf %{buildroot}
-gem install --local --install-dir %{buildroot}/%{ruby_gemdir} --force %{SOURCE0}
-
-rm -rf %{buildroot}%{ruby_gemdir}/{cache,gems/%{oname}-%{version}/ext}
-mv %{buildroot}%{ruby_gemdir}/bin %{buildroot}%{_prefix}
-
-%clean
-rm -rf %{buildroot}
+%gem_install
 
 %files
-%defattr(-,root,root)
-%doc %{ruby_gemdir}/doc/%{oname}-%{version}
-%{ruby_gemdir}/gems/%{oname}-%{version}
-%{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
 %{_bindir}/nokogiri
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/bin
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/ext
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/xsd
+%{ruby_gemdir}/gems/%{rbname}-%{version}/bin/nokogiri
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/ext/nokogiri
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/css
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/css/*.rb
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/css/*.rex
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/css/*.y
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/decorators
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/decorators/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/html
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/html/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/html/sax
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/html/sax/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/node
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/node/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/pp
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/pp/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/sax
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/sax/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/xpath
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/xpath/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xslt
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xslt/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/xsd/xmlparser
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/xsd/xmlparser/*.rb
 
+%{ruby_sitearchdir}/%{rbname}/*.so
+%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
+
+
+%files doc
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.rdoc
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.txt
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/ext/nokogiri/*.c
+%doc %{ruby_gemdir}/doc/%{rbname}-%{version}
