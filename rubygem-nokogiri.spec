@@ -5,7 +5,7 @@ Summary:	Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
 Name:		rubygem-%{rbname}
 
 Version:	1.5.0
-Release:	1
+Release:	2
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
 URL:		http://nokogiri.org
