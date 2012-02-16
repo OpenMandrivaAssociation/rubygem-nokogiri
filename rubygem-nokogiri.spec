@@ -12,7 +12,6 @@ URL:		http://nokogiri.org
 Source0:	http://gems.rubyforge.org/gems/%{rbname}-%{version}.gem
 BuildRequires:	rubygems 
 BuildRequires:	ruby-devel
-BuildRequires:	rubygem(rake)
 BuildRequires:	libxslt-devel
 BuildRequires:	pkgconfig(libxml-2.0)
 
