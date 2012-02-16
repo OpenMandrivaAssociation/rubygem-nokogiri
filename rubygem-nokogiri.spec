@@ -1,4 +1,4 @@
-# Generated from nokogiri-1.5.0.gem by gem2rpm5 -*- rpm-spec -*-          
+# Generated from nokogiri-1.5.0.gem by gem2rpm5 -*- rpm-spec -*-
 %define	rbname	nokogiri
 
 Summary:	Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
@@ -10,6 +10,7 @@ Group:		Development/Ruby
 License:	GPLv2+ or Ruby
 URL:		http://nokogiri.org
 Source0:	http://gems.rubyforge.org/gems/%{rbname}-%{version}.gem
+Patch0:		nokogiri-1.5.0-string-format-fix.patch
 BuildRequires:	rubygems 
 BuildRequires:	ruby-devel
 BuildRequires:	libxslt-devel
@@ -32,6 +33,7 @@ Documents, RDoc & RI documentation for %{name}.
 
 %prep
 %setup -q
+%patch0 -p1 -b .str_fmt~
 
 %build
 %gem_build
