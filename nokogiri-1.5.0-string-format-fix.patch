@@ -1,0 +1,11 @@
+--- rubygem-nokogiri-1.5.0/ext/nokogiri/xml_xpath_context.c~	2012-02-16 01:54:48.769883934 +0100
++++ rubygem-nokogiri-1.5.0/ext/nokogiri/xml_xpath_context.c	2012-02-16 01:55:34.966939070 +0100
+@@ -181,7 +181,7 @@ static void xpath_generic_exception_hand
+   vasprintf(&message, msg, args);
+   va_end(args);
+ 
+-  rb_raise(rb_eRuntimeError, message);
++  rb_raise(rb_eRuntimeError, "%s", message);
+ }
+ 
+ /*
