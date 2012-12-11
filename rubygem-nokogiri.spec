@@ -15,6 +15,7 @@ BuildRequires:	rubygems
 BuildRequires:	ruby-devel
 BuildRequires:	libxslt-devel
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	locales-en
 
 %description
 Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser.  Among Nokogiri's
@@ -36,6 +37,7 @@ Documents, RDoc & RI documentation for %{name}.
 %patch0 -p1 -b .str_fmt~
 
 %build
+export LC_ALL=en_US.UTF-8
 %gem_build
 
 %install
@@ -87,3 +89,27 @@ Documents, RDoc & RI documentation for %{name}.
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.txt
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/ext/nokogiri/*.c
 %doc %{ruby_gemdir}/doc/%{rbname}-%{version}
+
+
+%changelog
+* Thu Feb 16 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.5.0-2
++ Revision: 774659
+- string format fixes (P0)
+- drop build dependency on rake as it's now provided by ruby package
+- mass rebuild of ruby packages against ruby 1.9.1
+
+* Fri Jan 27 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.5.0-1
++ Revision: 769358
+- version update 1.5.0
+
+* Sat Oct 09 2010 Rémy Clouard <shikamaru@mandriva.org> 1.4.3.1-1mdv2011.0
++ Revision: 584366
+- bump release (needed for cucumber)
+
+* Wed Feb 03 2010 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.4.1-1mdv2010.1
++ Revision: 500512
+- import rubygem-nokogiri
+
+
+* Mon Feb  3 2010 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.4.1-1
+- initial release
