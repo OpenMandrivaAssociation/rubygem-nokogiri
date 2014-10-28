@@ -5,7 +5,7 @@ Summary:	Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
 Name:		rubygem-%{rbname}
 
 Version:	1.5.0
-Release:	2
+Release:	4
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
 URL:		http://nokogiri.org
@@ -45,71 +45,49 @@ export LC_ALL=en_US.UTF-8
 
 %files
 %{_bindir}/nokogiri
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/bin
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/ext
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/xsd
-%{ruby_gemdir}/gems/%{rbname}-%{version}/bin/nokogiri
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/ext/nokogiri
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/css
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/css/*.rb
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/css/*.rex
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/css/*.y
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/decorators
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/decorators/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/html
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/html/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/html/sax
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/html/sax/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/node
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/node/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/pp
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/pp/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/sax
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/sax/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/xpath
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/xpath/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xslt
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/nokogiri/xslt/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/xsd/xmlparser
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/xsd/xmlparser/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}
+%dir %{gem_dir}/gems/%{rbname}-%{version}/bin
+%dir %{gem_dir}/gems/%{rbname}-%{version}/ext
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/xsd
+%{gem_dir}/gems/%{rbname}-%{version}/bin/nokogiri
+%dir %{gem_dir}/gems/%{rbname}-%{version}/ext/nokogiri
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib
+%{gem_dir}/gems/%{rbname}-%{version}/lib/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/css
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/css/*.rb
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/css/*.rex
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/css/*.y
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/decorators
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/decorators/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/html
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/html/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/html/sax
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/html/sax/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xml
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/node
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/node/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/pp
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/pp/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/sax
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/sax/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/xpath
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xml/xpath/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xslt
+%{gem_dir}/gems/%{rbname}-%{version}/lib/nokogiri/xslt/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/xsd/xmlparser
+%{gem_dir}/gems/%{rbname}-%{version}/lib/xsd/xmlparser/*.rb
 
 %{ruby_sitearchdir}/%{rbname}/*.so
-%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
+%{gem_dir}/specifications/%{rbname}-%{version}.gemspec
 
 
 %files doc
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.rdoc
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.txt
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/ext/nokogiri/*.c
-%doc %{ruby_gemdir}/doc/%{rbname}-%{version}
+%doc %{gem_dir}/gems/%{rbname}-%{version}/*.rdoc
+%doc %{gem_dir}/gems/%{rbname}-%{version}/*.txt
+%doc %{gem_dir}/gems/%{rbname}-%{version}/ext/nokogiri/*.c
+%doc %{gem_dir}/doc/%{rbname}-%{version}
 
 
-%changelog
-* Thu Feb 16 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.5.0-2
-+ Revision: 774659
-- string format fixes (P0)
-- drop build dependency on rake as it's now provided by ruby package
-- mass rebuild of ruby packages against ruby 1.9.1
-
-* Fri Jan 27 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.5.0-1
-+ Revision: 769358
-- version update 1.5.0
-
-* Sat Oct 09 2010 Rémy Clouard <shikamaru@mandriva.org> 1.4.3.1-1mdv2011.0
-+ Revision: 584366
-- bump release (needed for cucumber)
-
-* Wed Feb 03 2010 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.4.1-1mdv2010.1
-+ Revision: 500512
-- import rubygem-nokogiri
-
-
-* Mon Feb  3 2010 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.4.1-1
-- initial release
