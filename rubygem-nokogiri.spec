@@ -8,7 +8,7 @@ Version:	1.5.0
 Release:	5
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
-URL:		http://nokogiri.org
+URL:		https://nokogiri.org
 Source0:	http://gems.rubyforge.org/gems/%{rbname}-%{version}.gem
 Patch0:		nokogiri-1.5.0-string-format-fix.patch
 BuildRequires:	rubygems 
